@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+
+<style>
+
+    nav {
+        background: linear-gradient(-40deg, #3222ac, #7a2fdd, #5d6295, #61615f);
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+        
+    }
+
+    h2 {
+        margin-top: 5px;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    body {
+        background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        overflow-y: hidden; /* Hide vertical scrollbar */
+        overflow-x: hidden; /* Hide horizontal scrollbar */ 
+    }
+    .dropbtn {
+        margin-left: 1.5rem;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        background-color: rgba(0,0,0,0);
+        color: white;
+        padding: 5px 0px;
+        font-size: 1.25rem;
+        border: none;
+        
+    }
+
+    .dropdown {
+        
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #212529;
+        opacity: 1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+    }
+
+    .dropdown-content a:hover {
+            background-color: #0d6efd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: none;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        line-height: 45px;
+        color: none
+    }
+
+    .navbar-new, .navbar-new:hover {
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-left: 1rem;
+        font-size: 1.25rem;
+        text-decoration: none;
+        white-space: nowrap;
+        color: white;
+        
+    }
+    .navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1.5rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+</style>
+
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-new" href="/">Home</a>
+
+            <a class="navbar-new" href="/dataset">Dataset</a>
+
+       
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- DropDown Button for EDA-->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown"> 
+                <div class="dropdown" >
+                    <button class="dropbtn">EDA</button>
+                    <div class="dropdown-content">
+                        <a href="/eda2">Attack Distribution</a>
+                        <a href="/eda1">Protocol Distribution</a>
+                        <a href="/eda3">Service Distribution</a>
+                        <a href="/eda4">Flag Distribution</a>
+                    
+                    </div>
+                </div>
+            </div> 
+
+            <div class="container-fluid">
+                <a class="navbar-new" href="/performance">Results</a>
+                <a class="navbar-new" href="/prediction">Prediction</a>
+                <a class="navbar-new" href="/about">Team</a>
+                
+            </div>
+            
+        </div>
+        
+        
+    </nav>
+
+    <!--<footer class="footer">
+        <div class="container" style:"text-dark">
+            &copy; 2022 - Final Project G4
+        </div>
+    </footer>-->
+    <div class="container">
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+                integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+                integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

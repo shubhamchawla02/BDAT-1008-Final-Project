@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+        img {
+                width: 1000px;
+                height: 450px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }     
+        
+        .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+            margin-top: 93px;
+        }
+        .column2 {
+            float: right;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            --bs-gutter-x: 5.5rem;
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Model Performance Comparison</h1>
+
+        </div>
+
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="/static/results-1.png" alt="attacktype" style="width:98%; height: 65%; ">
+            </div>
+            <div class="column2">
+                <img src="/static/results.png" alt="2" style="width:100%">
+            </div>
+        </div>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px"><b>Observations</b></p>
+        <ul style="text-align:left; font-family: 'Times New Roman';font-size:20px">
+            <li>The best performance was achieved by Decision Tree and Random Forests classifiers which guarantees high performance
+                scores for all the metrics.</li>
+            <li>Naïve Bayes multinomial predicts our target variable with 93% accuracy which is not bad.
+            </li>
+            <li>As for the other evaluation metrics, Logistic
+                Regression is characterized by quite good results except for the weighted precision which is rather low (63%)</li>
+            
+    
+    </body>
+</head>
+
+
+
+{% endblock %}

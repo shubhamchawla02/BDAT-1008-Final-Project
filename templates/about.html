@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+        html {
+            
+            box-sizing: border-box;
+            width:100%;
+            overflow-x:hidden;
+            height:0px;
+            padding:0px;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 15px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height:548px;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .button:hover {
+                background-color: #555;
+            }
+
+    </style>
+</head>
+<body>
+    
+    <h2 style="font-family:Times New Roman,serif;text-align:center">BDAT 1008 Data Collection & Curation Final Project Team 2</h2>
+    <br>
+    
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="/static/shubham.jpg" alt="Shubham" style="width:80%;margin-left:45px;margin-top:15px">
+                <div class="container">
+                    <h1 style="font-family: Times New Roman,serif; text-align:center; font-size:25px"><b>Shubham Chawla</b></h1>
+                    <p style ="text-align:center" class="title">200493036</p>
+                    <p style ="text-align:center">Developer</p>
+                    <p style ="text-align:center">shubham.chawla@mygeorgian.ca</p>
+                    <p><a href='https://www.linkedin.com/in/shubhamchawla02/'><button class="button">LinkedIn</button></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/static/a1.png" alt="Archit" style="width:73%;margin-left:45px;margin-top:15px;margin-bottom:5px">
+                <div class="container">
+                    <h1 style="font-family:Times New Roman,serif; text-align:center; font-size:25px"><b>Archit Sinha</b></h1>
+                    <p style ="text-align:center" class="title">200505416</p>
+                    <p style ="text-align:center">Business Analyst</p>
+                    <p style ="text-align:center">archit.sinha2@mygeorgian.ca</p>
+                    <p><a href='https://www.linkedin.com/in/archit-s-83747b134/'><button class="button">LinkedIn</button></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/static/chintan.png" alt="Chintan" style="width:86.5%;margin-left:22px;margin-top:15px">
+                <div class="container">
+                    <h1 style="font-family:Times New Roman,serif; text-align:center; font-size:25px"><b>Chintan Vajani</b></h1>
+                    <p style ="text-align:center" class="title">200508118</p>
+                    <p style ="text-align:center">Project Manager</p>
+                    <p style ="text-align:center">chintan.vajani@mygeorgian.ca</p>
+                    <p><a href='https://www.linkedin.com/in/chintan-vajani-366034212/'><button class="button">LinkedIn</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

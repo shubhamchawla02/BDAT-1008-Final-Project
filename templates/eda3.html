@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}EDA3{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .column2 {
+            float: right;
+            width: 50%;
+            padding: 5px;
+        }
+        img {
+                width: 900px;
+                height: 350px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            --bs-gutter-x: 5.5rem;
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Service Type Distribution</h1>
+        <p></p>
+        </div>
+        <br>
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="/static/service.png" alt="attacktype" style="width:100%">
+            </div>
+            <div class="column2">
+                <img src="/static/service2.png" alt="2" style="width:100%">
+            </div>
+        </div>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px"><b>Observations</b></p>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:22px">In the left plot we have 24 different kind of services and their distributions :</p>
+        <ul style="text-align:left; font-family: 'Times New Roman';font-size:20px">
+            <li>There are three services ecr_i, http and private that dominates the dataset.</li>
+            <li>On the right side we have plotted service type against our target variable</li>
+            <li>Private service and ecr_i is dominated by DOS attack class</li>
+            <li>http service is dominated by normal class which makes sense</li>
+        
+        </ul>
+
+        
+        
+    </body>
+</head>
+
+
+
+{% endblock %}

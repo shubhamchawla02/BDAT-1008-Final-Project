@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}EDA1{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+        img {
+                width: 900px;
+                height: 350px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }     
+        
+        .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .column2 {
+            float: right;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            --bs-gutter-x: 5.5rem;
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Protocol Type Distribution</h1>
+        <br>
+        </div>
+
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="/static/prtype.png" alt="attacktype" style="width:100%">
+            </div>
+            <div class="column2">
+                <img src="/static/ed2.2.png" alt="2" style="width:100%">
+            </div>
+        </div>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px"><b>Observations</b></p>
+        <ul style="text-align:left; font-family: 'Times New Roman';font-size:20px">
+            <li>We have 3 different category of protocols in the training data namely : TCP , UDP and ICMP</li>
+            <li>ICMP has the highest number of data points followed by TCP and UDP</li>
+            <li>On the right side we have plotted protocol types against our target variable</li>
+            <li>Normal and DOS classes both are uniform only in term of TCP whereas UDP only shows up in normal class</li>
+            <li>Majority of the ICMP protoype belongs to DOS class while there are only a few points belongs to normal class also</li>
+    
+    </body>
+</head>
+
+
+
+{% endblock %}

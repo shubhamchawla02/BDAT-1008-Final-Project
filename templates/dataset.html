@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Dataset{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+        img {
+                width: 850px;
+                height: 360px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }     
+        
+        .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Information about the dataset</h1>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px">This data is KDD99 data set, which is widely used as one of the few publicly available data sets for network-based anomaly detection systems.</p>
+        <p style="text-align:center; font-family: 'Times New Roman';font-size:25px">Dataset can be found here: <a href="http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html">http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html</a></p>
+        <p style="text-align:center; font-family: 'Times New Roman';font-size:25px">Github Link: <a href="https://github.com/shubhamchawla02/BDAT-1008-Final-Project">https://github.com/shubhamchawla02/BDAT-1008-Final-Project</a></p>
+        
+        <p style="text-align:center; font-family: 'Times New Roman';font-size:25px">There are <b>4,898,431 rows</b> and <b>42 different attributes</b></p>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:21px"><b>Label - Target Variable</b></p>
+        <ul>
+            <li><b>DOS:</b> Denial of service is an attack category, which depletes the victim‟s resources thereby making it unable to handle legitimate requests – e.g. syn flooding. Relevant features: “source bytes” and “percentage of packets with errors”</li>
+            <li><b>robing:</b> Surveillance and other probing attack‟s objective is to gain information about the remote victim e.g. port scanning. Relevant features: “duration of connection” and “source bytes”</li>
+            <li><b>U2R:</b> unauthorized access to local super user (root) privileges is an attack type, by which an attacker uses a normal account to login into a victim system and tries to gain root/administrator privileges by exploiting some vulnerability in the victim e.g. buffer overflow attacks. Relevant features: “number of file creations” and “number of shell prompts invoked,”</li>
+            <li><b>R2L:</b> unauthorized access from a remote machine, the attacker intrudes into a remote machine and gains local access of the victim machine. E.g. password guessing Relevant features: Network level features – “duration of connection” and “service requested” and host level features - “number of failed login attempts”</li>
+        </ul>
+        
+        <p></p>
+        </div>
+
+    <body>
+        <div class="img">
+            <img src="/static/11.png" class = "center">
+            <p></p>
+            <img src="/static/22.png" class = "center">
+            <p></p>
+            <img src="/static/3.png" class = "center">
+            <p></p>
+            <img src="/static/4.png" class = "center">
+            <p></p>
+            
+        
+        </div>
+        
+    </body>
+</head>
+
+
+
+{% endblock %}

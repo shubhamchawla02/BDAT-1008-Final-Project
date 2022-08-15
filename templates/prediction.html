@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+          
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+        /* Style inputs with type="text", select elements */
+        input[type=text], select {
+        width: 100%; /* Full width */
+        padding: 12px; /* Some padding */
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+        background-color: #45a049;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        
+        <!--<p style="text-align:center; font-family: 'Times New Roman';font-size:25px">Some info..</p>-->
+    </div>
+
+    <body>
+        <div class="login">
+           <h1 style="color:rgb(0, 0, 0);text-align: center;">Network Intrusion Detection System</h1>
+           <p></p>
+           
+           {% if output %}
+              <h3 style="text-align:center"> Attack Class should be <b style="color:red;">{{ output }}</b>  </h3>
+            <p></p>
+            <div class="row justify-content-center">
+              <a class="btn btn-danger" style = "font-size: 20px;text-align:center; width: 20%;" href="/prediction">Make a new prediction</a>
+            </div>
+              
+           {% endif %}
+            <!-- Main Input For Receiving Query to our ML -->
+           <form action="{{ url_for('predict')}}"method="post">
+               <label for="attack">Attack Type</label>
+               <select id="attack" name="attack">
+                 <option value="0">neptune</option>
+                 <option value="1">normal</option>
+                 <option value="2">satan</option>
+                 <option value="3">Other</option>
+               </select><br><br>
+       
+               <label for="count">Number of connections to the same destination host as the current connection in the past two seconds (0 - 511)</label>
+               <input type="text" name="count" placeholder="count" required="required" /><br><br>
+       
+               <label for="dst_host_diff_srv_rate">The percentage of connections that were to different services, among the connections aggregated in dst_host_count (0.0 - 1.0)</label>
+               <input type="text" name="dst_host_diff_srv_rate" placeholder="dst_host_diff_srv_rate" required="required" /><br><br>
+       
+               <label for="dst_host_same_src_port_rate">The percentage of connections that were to the same source port, among the connections aggregated in dst_host_srv_count (0.0 - 1.0)</label>
+               <input type="text" name="dst_host_same_src_port_rate" placeholder="dst_host_same_src_port_rate" required="required" /><br><br>
+       
+               <label for="dst_host_same_srv_rate">The percentage of connections that were to the same service, among the connections aggregated in dst_host_count (0.0 - 1.0)</label>
+               <input type="text" name="dst_host_same_srv_rate" placeholder="dst_host_same_srv_rate" required="required" /><br><br>
+       
+               <label for="dst_host_srv_count">Number of connections having the same port number (0 - 255)</label>
+               <input type="text" name="dst_host_srv_count" placeholder="dst_host_srv_count" required="required" /><br><br>
+       
+               <label for="flag">Status of the connection (Normal or Error)</label>
+               <select id="flag" name="flag">
+                 <option value="0">Other</option>
+                 <option value="1">S0</option>
+                 <option value="2">SF</option>
+               </select><br><br>
+       
+               <label for="last_flag">Last Flag (0-21)</label>
+               <input type="text" name="last_flag" placeholder="last_flag" required="required" /><br><br>
+       
+               <label for="logged_in">0 - not logged in, 1 - logged in</label>
+               <input type="text" name="logged_in" placeholder="logged_in" required="required" /><br><br>
+       
+               <label for="same_srv_rate">The percentage of connections that were to the same service, among the connections aggregated in count (0.0 - 1.0)</label>
+               <input type="text" name="same_srv_rate" placeholder="same_srv_rate" required="required" /><br><br>
+       
+               <label for="serror_rate">The percentage of connections that have activated the flag (4) s0, s1, s2 or s3, among the connections aggregated in count (0.0 - 1.0)</label>
+               <input type="text" name="serror_rate" placeholder="serror_rate" required="required" /><br><br>
+       
+               <label for="service_http">Destination network service (http or not)</label>
+               <select id="service_http" name="service_http">
+                 <option value="0">Yes</option>
+                 <option value="1">No</option>
+               </select><br><br>
+       
+               <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+           </form>
+          <br>
+           
+        </div>
+    </body>
+</head>
+
+
+
+{% endblock %}

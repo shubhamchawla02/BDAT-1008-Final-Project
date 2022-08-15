@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}EDA4{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        img {
+                width: 900px;
+                height: 350px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .column2 {
+            float: right;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            --bs-gutter-x: 5.5rem;
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Flag Type Distribution</h1>
+        <p></p>
+        </div>
+        <br>
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="/static/flag1.png" alt="attacktype" style="width:100%">
+            </div>
+            <div class="column2">
+                <img src="/static/flag2.png" alt="2" style="width:100%">
+            </div>
+        </div>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px"><b>Observations</b></p>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:22px">In the left plot we have 11 different kind of flag types and their distributions :</p>
+        <ul style="text-align:left; font-family: 'Times New Roman';font-size:20px">
+            <li>There are three flags with most datapoints that are SF, SO and REj. Although, SF flag constitutes more than 80% pf the data</li>
+            <li>On the right side we have plotted flag type against our target variable</li>
+            <li>SF and SO flag is dominated by DOS attack</li>
+            <li>REJ shows approximately equal distribution of normal and DOS attack class</li>
+        
+        </ul>
+
+        
+        
+    </body>
+</head>
+
+
+
+{% endblock %}

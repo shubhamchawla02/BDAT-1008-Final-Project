@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}EDA1{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1109099.jpg');
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            overflow-y: auto; /* Hide vertical scrollbar */
+            overflow-x: auto; /* Hide horizontal scrollbar */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .column2 {
+            float: right;
+            width: 50%;
+            padding: 5px;
+        }
+
+        img {
+                width: 850px;
+                height: 320px;
+                border:2px solid #fff;
+                box-shadow: 10px 10px 5px rgb(131, 126, 126);
+                -moz-box-shadow: 10px 10px 5px #ccc;
+                -webkit-box-shadow: 10px 10px 5px #ccc;
+                -khtml-box-shadow: 10px 10px 5px #ccc;
+        }
+        /* Clearfix (clear floats) */
+        .row::after {
+            --bs-gutter-x: 5.5rem;
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <p></p>
+        <h1 style="color: rgb(0, 0, 0);text-align:center; font-family: 'Times New Roman', Times, serif, serif; ">Attack Type Distribution</h1>
+        <p></p>
+        </div>
+        <br>
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="/static/eda2.png" alt="attacktype" style="width:100%">
+            </div>
+            <div class="column2">
+                <img src="/static/encodedcat.png" alt="2" style="width:100%">
+            </div>
+        </div>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:25px"><b>Observations</b></p>
+        <p style="text-align:left; font-family: 'Times New Roman';font-size:22px">In the left plot we have 23 different kind of attacks and their distributions :</p>
+        <ul style="text-align:left; font-family: 'Times New Roman';font-size:20px">
+            <li>Data set is not uniformly distributed as we can see in the above plots</li>
+            <li>There are lots of attacks where data points are very few and some of the attacks like Normal, Neptune and Smurf 85% data points out of 100% data points</li>
+            <li>There are 16 attacks out of 23 attacks where the data points are less then 1%</li>
+            <li>There are way too many categories in the label to predict. So we encoded them according to 5 main categories - Normal, DOS, Probe, R2L and U2R which can be seen in the right plot</li>
+        
+        </ul>
+
+        
+        
+    </body>
+</head>
+
+
+
+{% endblock %}
